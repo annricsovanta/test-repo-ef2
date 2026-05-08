@@ -1,0 +1,43 @@
+<mvc:View
+    controllerName="simpleshoppinglistui.controller.ShoppingList"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page id="shoppingListPage" title="{i18n>shoppingListTitle}">
+        <headerContent>
+            <Button
+                icon="sap-icon://add"
+                press="onAddItem"
+                tooltip="{i18n>addItem}" />
+        </headerContent>
+        <content>
+            <Table
+                id="shoppingItemsTable"
+                items="{shoppingModel>/ShoppingItems}"
+                growing="true"
+                noDataText="{i18n>noItemsFound}">
+                <columns>
+                    <Column><Text text="{i18n>name}" /></Column>
+                    <Column><Text text="{i18n>quantity}" /></Column>
+                    <Column><Text text="{i18n>unit}" /></Column>
+                    <Column><Text text="{i18n>category}" /></Column>
+                    <Column><Text text="{i18n>actions}" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{shoppingModel>name}" />
+                            <Text text="{shoppingModel>quantity}" />
+                            <Text text="{shoppingModel>unit}" />
+                            <Text text="{shoppingModel>category}" />
+                            <HBox>
+                                <Button icon="sap-icon://edit" press="onEditItem" />
+                                <Button icon="sap-icon://delete" press="onDeleteItem" type="Reject" />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -23,6 +23,13 @@
           "annotations": [],
           "odataVersion": "4.01"
         }
+      },
+      "shoppingService": {
+        "uri": "/shopping/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "4.0"
+        }
       }
     }
   },
@@ -70,6 +77,16 @@
           "autoExpandSelect": true,
           "earlyRequests": true
         }
+      },
+      "shoppingModel": {
+        "dataSource": "shoppingService",
+        "type": "sap.ui.model.odata.v4.ODataModel",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true
+        }
       }
     },
     "resources": {
@@ -98,12 +115,23 @@
           "target": [
             "TargetsimpleShoppingListUI"
           ]
+        },
+        {
+          "name": "ShoppingList",
+          "pattern": "shopping",
+          "target": [
+            "ShoppingListTarget"
+          ]
         }
       ],
       "targets": {
         "TargetsimpleShoppingListUI": {
           "id": "simpleShoppingListUI",
           "name": "simpleShoppingListUI"
+        },
+        "ShoppingListTarget": {
+          "id": "ShoppingList",
+          "name": "ShoppingList"
         }
       }
     },

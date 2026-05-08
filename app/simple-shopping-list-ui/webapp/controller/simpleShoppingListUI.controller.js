@@ -5,6 +5,7 @@ sap.ui.define([
 
     return Controller.extend("simpleshoppinglistui.controller.simpleShoppingListUI", {
         onInit() {
+            this.getOwnerComponent().getRouter().navTo("ShoppingList");
         }
     });
 });
