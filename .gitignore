@@ -1,0 +1,37 @@
+node_modules/
+target/
+_out/
+gen/
+
+.cdsrc-private.json
+default-*.json
+*.sqlite
+
+# MTA
+mta_archives/
+*_mta_build_tmp
+*.mtar
+
+# Other
+.DS_Store
+
+# @cap-js/cds-typer
+@cds-models
+
+# UI build output — wird von mbt build generiert, nicht committen
+app/simple-shopping-list-ui/dist
+app/simple-shopping-list-ui/webapp/simple-shopping-list-ui.zip
+app/router/resources/
+
+# CAP / CF
+*.db
+connection.properties
+
+# IDEs & Tools
+.che/
+.gen/
+.vscode/
+*.orig
+*.log
+*.iml
+*.flattened-pom.xml

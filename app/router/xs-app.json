@@ -1,0 +1,26 @@
+{
+  "welcomeFile": "/simple-shopping-list-ui/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/simple-shopping-list-ui/(.*)$",
+      "target": "$1",
+      "localDir": "resources/simple-shopping-list-ui/webapp",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/odata/(.*)$",
+      "target": "/odata/$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa",
+      "csrfProtection": true
+    },
+    {
+      "source": "^/(.*)$",
+      "target": "$1",
+      "destination": "srv-api",
+      "authenticationType": "xsuaa",
+      "csrfProtection": true
+    }
+  ]
+}
